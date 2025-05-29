@@ -156,4 +156,23 @@ const updateProfile = async (req, res) => {
     });
   }
 };
-export { signup, login, logout, updateProfile };
+
+
+const checkAuth = async(req ,res )=>{
+  try {
+
+    const user = req.user
+    return res.status(200).json({
+      user,
+      success: true,
+      message:"Check auth user"
+    })
+  } catch (error) {
+    console.error("Error: ", error);
+    return res.status(500).json({
+      success: false,
+      message: `Internal Server Error: ${error}`,
+    });
+  }
+}
+export { signup, login, logout, updateProfile, checkAuth};
