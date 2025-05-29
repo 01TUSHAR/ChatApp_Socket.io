@@ -14,27 +14,27 @@ temp/
 Thumbs.db
 
 # ------------------------
-# Backend
+# Backend (Server)
 # ------------------------
-backend/node_modules/
-backend/uploads/
-backend/.env
-backend/logs/
-backend/coverage/
-backend/dist/
-backend/build/
+server/node_modules/
+server/uploads/
+server/.env
+server/logs/
+server/coverage/
+server/dist/
+server/build/
 
 # ------------------------
-# Frontend
+# Frontend (Client)
 # ------------------------
-frontend/node_modules/
-frontend/.env
-frontend/.env.local
-frontend/.env.*.local
-frontend/dist/
-frontend/build/
-frontend/.next/     # if using Next.js instead of Vite/CRA
-frontend/.cache/    # Vite or other bundlers
+client/node_modules/
+client/.env
+client/.env.local
+client/.env.*.local
+client/dist/
+client/build/
+client/.next/     # if using Next.js instead of Vite/CRA
+client/.cache/    # Vite or other bundlers
 
 # ------------------------
 # Editor & OS
