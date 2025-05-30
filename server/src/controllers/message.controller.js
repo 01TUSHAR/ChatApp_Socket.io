@@ -10,6 +10,13 @@ export const getUserForSidebar = async (req, res) => {
       _id: { $ne: loggedUserId },
     }).select("-password");
 
+    if(!filteredUsers){
+      return res.status(400).json({
+        success:false,
+        message:"Users Not Found"
+      })
+    }
+
     return res.status(200).json({
       filteredUsers,
       success: true,
@@ -31,8 +38,8 @@ export const getMessages = async (req, res) => {
 
     const messages = await Message.find({
       $or: [
-        { senderId: myId, reciverId: userToChatId },
-        { senderId: userToChatId, reciverId: myId },
+        { senderId: myId, receiverId: userToChatId },
+        { senderId: userToChatId, receiverId: myId },
       ],
     });
 

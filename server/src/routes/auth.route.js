@@ -8,7 +8,7 @@ router.post('/signup', signup);
 router.post('/login', login);
 router.post('/logout', logout);
 router.get('/check',protectedRoute, checkAuth)
-router.patch('/updateProfile', protectedRoute, updateProfile)
+router.patch('/update-profile', protectedRoute, updateProfile)
 
 
 export default router
