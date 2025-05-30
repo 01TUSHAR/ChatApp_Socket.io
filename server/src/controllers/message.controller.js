@@ -4,7 +4,7 @@ import User from '../models/user.model.js'
 
 export const getUserForSidebar = async (req, res) => {
   try {
-    const loggedInUserId = req.User._id
+    const loggedInUserId = req.user._id
 
     const filteredUsers = await User.find({
       _id: { $ne: loggedInUserId },
@@ -25,13 +25,13 @@ export const getUserForSidebar = async (req, res) => {
 
 export const getMessages = async (req, res) => {
   try {
+    const myId = req.user._id
     const { id: userChatId } = req.params
-    const myId = req.User._id
 
     const messages = await Message.find({
       $or: [
-        { senderId: userChatId, receiverId: myId },
         { senderId: myId, receiverId: userChatId },
+        { senderId: userChatId, receiverId: myId },
       ],
     })
 

@@ -169,6 +169,7 @@ export const updateProfile = async (req, res) => {
   }
 }
 
+//check auth
 export const checkAuth = async (req, res) => {
   try {
     const user = req.user
