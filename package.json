@@ -1,0 +1,13 @@
+{
+  "name": "chatapp-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "client": "cd client && npm run dev:client",
+    "server": "cd server && npm run dev:server",
+    "dev": "concurrently --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
