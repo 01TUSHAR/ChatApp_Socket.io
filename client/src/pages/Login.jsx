@@ -21,7 +21,7 @@ const Login = () => {
     password: "",
   });
 
-  const { login, isLogginIn } = userAuthStore();
+  const { login, isLoggingIn } = userAuthStore();
 
   // function to handle inputs
   const handleFormData = (e) => {
@@ -119,9 +119,9 @@ const Login = () => {
             <button
               type="submit"
               className="btn btn-primary w-full"
-              disabled={isLogginIn}
+              disabled={isLoggingIn}
             >
-              {isLogginIn ? (
+              {isLoggingIn ? (
                 <>
                   <Loader2 className="size-5 animate-spin" />
                   Loading...
